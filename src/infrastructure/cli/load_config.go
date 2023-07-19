@@ -4,6 +4,7 @@ import (
 	log "github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
 	"url-shortener/configs"
+	"url-shortener/src/infrastructure/cache"
 	"url-shortener/src/infrastructure/db"
 )
 
@@ -26,11 +27,11 @@ func initConfig() {
 }
 
 func setupConfig() {
-	/*redisProvider, err := cache.CreateRedisCacheProvider(configs.Config.Cache)
+	redisProvider, err := cache.CreateRedisCacheProvider(configs.Config.Cache)
 	if err != nil {
 		log.Fatal("Error while creating redis cache provider: ", err)
 	}
-	cache.RedisCacheProvider = redisProvider*/
+	cache.RedisCacheProvider = redisProvider
 
 	postgresProvider, err := db.CreateDBProvider(configs.Config.Database)
 	if err != nil {
