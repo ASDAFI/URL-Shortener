@@ -25,5 +25,5 @@ func init() {
 	rootCmd.PersistentFlags().StringP("author", "a", "Ali Sadafi", "bale@gmail.com")
 	rootCmd.PersistentFlags().Bool("viper", true, "use Viper for configuration")
 	cobra.OnInitialize(initConfig)
-	//cobra.OnInitialize(setupConfig)
+	cobra.OnInitialize(setupConfig)
 }
