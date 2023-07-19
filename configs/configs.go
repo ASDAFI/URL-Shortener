@@ -18,7 +18,16 @@ type DatabaseConfiguration struct {
 	MaxOpenConnections    int    `mapstructure:"MaxOpenConnections"`
 }
 
+type CacheConfiguration struct {
+	Client   string `mapstructure:"client"`
+	Host     string `mapstructure:"host"`
+	Port     int    `mapstructure:"port"`
+	Password string `mapstructure:"password"`
+	DB       string `mapstructure:"db"`
+}
+
 type Configuration struct {
 	Server   ServerConfiguration   `mapstructure:"server"`
 	Database DatabaseConfiguration `mapstructure:"database"`
+	Cache    CacheConfiguration    `mapstructure:"cache"`
 }
