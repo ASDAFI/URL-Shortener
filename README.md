@@ -76,8 +76,6 @@ Start the URL shortener server:
 
 ## Note
 
-This URL shortener application is designed for demonstration purposes and may not be production-ready. Please use it responsibly and adapt it to your specific use case if necessary.
-
 Feel free to contribute and improve the application. Happy URL shortening!
 
 
