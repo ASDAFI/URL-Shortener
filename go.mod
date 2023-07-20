@@ -3,6 +3,7 @@ module url-shortener
 go 1.18
 
 require (
+	github.com/gorilla/mux v1.8.0
 	github.com/redis/go-redis/v9 v9.0.5
 	github.com/sirupsen/logrus v1.9.3
 	github.com/spf13/cobra v1.7.0
