@@ -81,3 +81,7 @@ func (r *LinkRepository) SetUrlExpiresAt(ctx context.Context, key string, value 
 	err := r.cacheInfrastructure.Client.Set(ctx, key, strValue, expiration).Err()
 	return err
 }
+
+func (r *LinkRepository) deleteExpiredLinks() {
+	r.dBInfrastructure.DB.Where("expires_at <= ?", time.Now()).Delete(&Link{})
+}
