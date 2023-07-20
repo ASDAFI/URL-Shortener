@@ -8,7 +8,7 @@ The URL shortener provides two endpoints to handle shortening and retrieving ori
 
 1. **Shorten URL Endpoint**
 
-   - Endpoint: `POST /shorten`
+   - Endpoint: `POST /short`
    - Request Body: `{"origin_link": "google.com"}`
    - Response: 
      ```json
@@ -19,7 +19,7 @@ The URL shortener provides two endpoints to handle shortening and retrieving ori
      }
      ```
 
-   When a `POST` request is made to the `/shorten` endpoint with the `origin_link`, the application generates an MD5 hash for the URL, creating a shortened link. The response includes the `shortened_link` and an `expires_at` timestamp indicating the expiration date of the short link. Additionally, a "OK!" message is returned to indicate the successful creation of the short link.
+   When a `POST` request is made to the `/short` endpoint with the `origin_link`, the application generates an MD5 hash for the URL, creating a shortened link. The response includes the `shortened_link` and an `expires_at` timestamp indicating the expiration date of the short link. Additionally, a "OK!" message is returned to indicate the successful creation of the short link.
 
 2. **Retrieve Original URL Endpoint**
 
