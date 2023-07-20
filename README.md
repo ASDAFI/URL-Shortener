@@ -40,8 +40,8 @@ The URL shortener provides two endpoints to handle shortening and retrieving ori
 
 To run the URL shortener application, you need the following:
 
-- Go programming language (version X.X.X)
-- Redis server (for caching)
+- Golang
+- Docker Compose
 
 ## Installation and Setup
 
