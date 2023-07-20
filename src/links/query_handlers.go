@@ -97,9 +97,8 @@ func (h *LinkQueryHandler) GetOriginLink(ctx context.Context, query GetOriginLin
 	if link == nil {
 		return nil, nil
 	}
-	log.Info("ooops")
 
-	err = h.linkRepository.SetUrl(ctx, query.getLinkKey(), *link.ShortenedLink, time.Minute*2)
+	err = h.linkRepository.SetUrl(ctx, query.getLinkKey(), link.OriginLink, time.Minute*2)
 	if err != nil {
 		return nil, err
 	}

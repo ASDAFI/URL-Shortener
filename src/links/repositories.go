@@ -3,7 +3,6 @@ package links
 import (
 	"context"
 	"github.com/redis/go-redis/v9"
-	log "github.com/sirupsen/logrus"
 	"time"
 	"url-shortener/src/infrastructure/cache"
 	"url-shortener/src/infrastructure/db"
@@ -69,7 +68,6 @@ func (r *LinkRepository) GetUrlExpiresAt(ctx context.Context, key string) (*time
 }
 
 func (r *LinkRepository) SetUrl(ctx context.Context, key string, value string, expiration time.Duration) error {
-	log.Info("hiii")
 	err := r.cacheInfrastructure.Client.Set(ctx, key, value, expiration).Err()
 	if err != nil && err != redis.Nil {
 		return err

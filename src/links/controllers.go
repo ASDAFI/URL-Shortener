@@ -100,6 +100,7 @@ func GetOrigin(writer http.ResponseWriter, request *http.Request) {
 		log.Fatalln(err)
 	}
 	if result != nil {
+		log.Info(result.ExpiresAt)
 		resp := GetOriginUrlResponse{&result.OriginLink, &result.ExpiresAt, "OK!"}
 		writer.WriteHeader(http.StatusOK)
 		err = json.NewEncoder(writer).Encode(&resp)
@@ -132,7 +133,6 @@ func UrlRedirect(writer http.ResponseWriter, request *http.Request) {
 	qhandler := NewLinkQueryHandler(rep)
 	queryReq := GetOriginLinkQuery{ShortenedLink: shortURL}
 	result, err := qhandler.GetOriginLink(request.Context(), queryReq)
-	log.Info(result.OriginLink)
 	if err != nil {
 		log.Fatalln(err)
 	}
