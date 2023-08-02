@@ -12,7 +12,7 @@ func RunServer() {
 	router := mux.NewRouter()
 	router.HandleFunc("/short", links.GetShortened).Methods("POST")
 	router.HandleFunc("/origin", links.GetOrigin).Methods("POST")
-	//router.HandleFunc("/{shortURL}", links.UrlRedirect)
+	router.HandleFunc("/short_url/{shortURL}", links.UrlRedirect)
 
 	err := http.ListenAndServe(configs.Config.Server.Host+":"+configs.Config.Server.HTTPPort, router) // todo: use config
 	if err != nil {

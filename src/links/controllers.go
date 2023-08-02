@@ -137,7 +137,7 @@ func UrlRedirect(writer http.ResponseWriter, request *http.Request) {
 		log.Fatalln(err)
 	}
 	if result != nil {
-		//http.Redirect(writer, request, result.OriginLink, http.StatusMovedPermanently)
+		http.Redirect(writer, request, result.OriginLink, http.StatusMovedPermanently)
 		return
 
 	} else {
